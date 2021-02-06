@@ -88,8 +88,8 @@
   (cdr (assoc profile chemacs-emacs-profiles)))
 
 (defun chemacs-emacs-profile-key (key &optional default)
-  (alist-get key (chemacs-get-emacs-profile chemacs-current-emacs-profile)
-             default))
+  (eval (alist-get key (chemacs-get-emacs-profile chemacs-current-emacs-profile)
+             default)))
 
 (defun chemacs-load-profile (profile)
   (when (not (chemacs-get-emacs-profile profile))
